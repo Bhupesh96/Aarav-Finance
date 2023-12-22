@@ -2,7 +2,7 @@
 FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 COPY . .
-RUN ./mvnw clean package
+RUN RUN mvn clean package
 
 # Runtime Stage
 FROM eclipse-temurin:17-jre
