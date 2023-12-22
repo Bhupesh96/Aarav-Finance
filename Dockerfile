@@ -5,6 +5,6 @@ RUN mvn clean package
 
 # Runtime Stage
 FROM openjdk:17-jdk-slim
-COPY --from=build /app/target/your-app-name.jar your-app-name.jar
+COPY --from=build /target/Aarava_Finance-0.0.1-SNAPSHOT.jar Aarava_Finance.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "your-app-name.jar"]
+ENTRYPOINT ["java", "-jar", "Aarava_Finance.jar"]
