@@ -5,7 +5,7 @@ COPY . .
 RUN mvn clean package
 
 # Runtime Stage
-FROM adoptopenjdk:17-jre-hotspot
+FROM openjdk:17-jre-slim
 WORKDIR /app
 COPY --from=build /app/target/your-app-name.jar your-app-name.jar
 EXPOSE 8080
