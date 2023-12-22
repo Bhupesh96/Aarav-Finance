@@ -1,8 +1,12 @@
-FROM eclipse-temurin:21-jdk As build
+# Build Stage
+FROM eclipse-temurin:17-jdk AS build
+WORKDIR /app
 COPY . .
-RUN mvn clean package
+RUN ./mvnw clean package
 
-FROM baseImage.6-eclipse-temurin-11
-COPY --from=build /targer/Aarava_Finance-0.0.1-SNAPSHOT.jar Aarava_Finance.jar
+# Runtime Stage
+FROM eclipse-temurin:17-jre
+WORKDIR /app
+COPY --from=build /app/target/Aarava_Finance-0.0.1-SNAPSHOT.jar Aarava_Finance.jar
 EXPOSE 8080
-ENTRYPOINT [ "java","-jar","Aarava_Finance.jar" ]
+ENTRYPOINT ["java", "-jar", "Aarava_Finance.jar"]
