@@ -48,7 +48,7 @@
 
 <body>
 
-	<section class="modal hidden">
+	<!--<section class="modal hidden">
 		<div class="flex">
 			<button class="btn-close">⨉</button>
 		</div>
@@ -56,7 +56,7 @@
 			<h3>Apply for a loan</h3>
 		</div>
 		<form id="loanForm" th:action="@{/saveApp}" th:object="${apply}" th:method="post">
-			<!-- Your form elements here -->
+			 Your form elements here 
 			<input type="text" placeholder="Full Name" name="name">
 			<input type="email" placeholder="Email Address" name="email">
 			<input type="tel" placeholder="Mobile Number" name="mobile">
@@ -66,9 +66,11 @@
 		</form>
 	</section>
 
-	<div class="overlay hidden"></div>
+	<div class="overlay hidden"></div>-->
 
 	<!--<button class="btn btn-open">Open Modal</button>-->
+
+
 
 
 	<!--header section start -->
@@ -105,6 +107,54 @@
 
 	<div th:replace="${content}"></div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Apply for a loan</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form id="loanForm" th:action="@{/saveApp}" th:object="${apply}" th:method="post">
+
+						<div class="mb-3"><label class="fw-bold mb-2" for="name">Full Name <span style="color: red;">*
+								</span></label><input type="text" id="mobile_number" placeholder="Enter full name"
+								class="form-control" value="" name="name" required autocomplete="off">
+						</div>
+						<div class="mb-3"><label class="fw-bold mb-2" for="email">Email <span style="color: red;">*
+								</span></label><input type="email" id="email" placeholder="Enter email address"
+								class="form-control" value="" name="email" required autocomplete="off">
+						</div>
+						<div class="mb-3"><label class="fw-bold mb-2" for="mobile">Mobile Number <span
+									style="color: red;">* </span></label><input type="number" maxlength="10" id="mobile"
+								placeholder="Enter mobile number" class="form-control" value="" name="mobile" required
+								autocomplete="off">
+						</div>
+						<div class="mb-3"><label class="fw-bold mb-2" for="loanType">Loan Type <span
+									style="color: red;">* </span></label><input type="text" id="loanType"
+								placeholder="Select Loan Type" class="form-control" th:value="${loanType}"
+								name="loanType" readonly required autocomplete="off">
+						</div>
+						<div class="mb-3"><label class="fw-bold mb-2" for="loanAmount">Loan Amount <span
+									style="color: red;">* </span></label><input type="number" id="loanAmount"
+								placeholder="Enter loan amount" class="form-control" value="" name="loanAmount" required
+								autocomplete="off">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-dark">Apply</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
 
 	<!-- Javascript files-->
 	<script src="js/jquery.min.js"></script>
@@ -132,16 +182,12 @@
 	<script src="/js/main.js"></script>
 	<script src="/js/modal.js"></script>
 
-	<script>
-  function scrollToLoanSwiper() {
-    var loanSwiperSection = document.getElementById('loanSwiper');
-    if (loanSwiperSection) {
-      loanSwiperSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.error("LoanSwiper section not found!");
-    }
-  }
-</script>
+	<script th:inline="javascript">
+		function setLoanType(loanType) {
+			document.getElementById('loanType').value = loanType;
+		}
+	</script>
+
 
 
 

@@ -45,15 +45,3 @@ hr {
 	/* Adjust the margin as needed for spacing */
 	width: 80%;
 }
-
-
-.modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Customize the size of the modal if needed */
-.modal-dialog {
-    max-width: 600px;
-}

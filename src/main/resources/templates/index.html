@@ -63,7 +63,7 @@
 				<p class="what_text">It is a long established fact that a reader will be distracted by the readable
 					content
 					of a </p>
-				<div class="slide-container swiper" >
+				<div class="slide-container swiper">
 
 					<div class="slide-content">
 						<div class="card-wrapper swiper-wrapper">
@@ -72,7 +72,7 @@
 									<h5 class="card-title">Personal Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary btn-open">Apply Now</a>
+									<a href="#" class="btn btn-dark"  data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Personal Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -80,7 +80,7 @@
 									<h5 class="card-title">Home Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Home Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -88,7 +88,7 @@
 									<h5 class="card-title">Car Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Car Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -96,7 +96,7 @@
 									<h5 class="card-title">Business Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Business Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -104,7 +104,7 @@
 									<h5 class="card-title">MortGage Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('MortGage Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -112,7 +112,7 @@
 									<h5 class="card-title">Loan Take Over</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Loan Take Over')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -120,7 +120,7 @@
 									<h5 class="card-title">Shop Purchase Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Shop Purchase Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -128,7 +128,7 @@
 									<h5 class="card-title">Plot Purchase Loan</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Plot Purchase Loan')">Apply Now</a>
 								</div>
 							</div>
 							<div class="card swiper-slide">
@@ -136,7 +136,7 @@
 									<h5 class="card-title">Property Adviser</h5>
 									<p class="card-text">With supporting text below as a natural lead-in to additional
 										content.</p>
-									<a href="#" class="btn btn-primary">Apply Now</a>
+									<a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" onclick="setLoanType('Property Adviser')">Apply Now</a>
 								</div>
 							</div>
 							<!-- ... Add other loan cards ... -->
@@ -157,7 +157,7 @@
 
 
 		<!--contact Section-->
-		<div class="content">
+		<div class="content contact-section">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-md-10">
@@ -170,7 +170,7 @@
 								<p><img src="images/undraw-contact.svg" alt="Image" class="img-fluid"></p>
 							</div>
 							<div class="col-md-6">
-								<form class="mb-5" method="post" id="contactForm" name="contactForm">
+								<form class="mb-5" th:action="@{/saveContact}" th:object="${contact}" method="post" id="contactForm" name="contactForm">
 									<div class="row">
 										<div class="col-md-12 form-group">
 											<input type="text" class="form-control" name="name" id="name"
@@ -209,10 +209,7 @@
 				</div>
 			</div>
 		</div>
-
-
-
-		<div id="hi">Hi</div>
+		
 
 	</section>
 
