@@ -31,12 +31,12 @@
 	left: 0;
 }
 
-swiper-pagination-bullet {
+.swiper-pagination-bullet {
 	background-color: #6E93F7;
 	opacity: 1;
 }
 
-swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
 	background-color: #4070F4;
 }
 
@@ -44,4 +44,16 @@ hr {
 	margin: 20px 10%;
 	/* Adjust the margin as needed for spacing */
 	width: 80%;
+}
+
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Customize the size of the modal if needed */
+.modal-dialog {
+    max-width: 600px;
 }

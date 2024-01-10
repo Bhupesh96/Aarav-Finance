@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+
+<head>
+	<!-- basic -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- mobile metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<!-- site metas -->
+	<title th:text="${title}">Cial</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<!-- style css -->
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<!-- Responsive-->
+	<link rel="stylesheet" href="/css/responsive.css">
+	<!-- fevicon -->
+	<link rel="icon" href="/images/fevicon.png" type="image/gif" />
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	<!-- Tweaks for older IEs-->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+	<!-- owl stylesheets -->
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+		integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--<link rel="stylesheet" href="/css/owl.theme.default.min.css">-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+		media="screen">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="/css/my.css" />
+
+	<!--contact us-->
+	<link rel="stylesheet" href="/css/contact.css" />
+	<link rel="stylesheet" href="/css/modal.css" />
+
+</head>
+
+<body>
+
+	<section class="modal hidden">
+		<div class="flex">
+			<button class="btn-close">⨉</button>
+		</div>
+		<div>
+			<h3>Apply for a loan</h3>
+		</div>
+		<form id="loanForm" th:action="@{/saveApp}" th:object="${apply}" th:method="post">
+			<!-- Your form elements here -->
+			<input type="text" placeholder="Full Name" name="name">
+			<input type="email" placeholder="Email Address" name="email">
+			<input type="tel" placeholder="Mobile Number" name="mobile">
+			<input type="text" placeholder="Loan Type" name="loanType">
+			<input type="text" placeholder="Loan Amount" name="loanAmount">
+			<button type="submit" class="btn">Submit</button>
+		</form>
+	</section>
+
+	<div class="overlay hidden"></div>
+
+	<!--<button class="btn btn-open">Open Modal</button>-->
+
+
+	<!--header section start -->
+	<div class="header_section">
+		<div class="header_left">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="logo"><a href="index.html"><img src="images/aarav-logo.png"></a></div>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="services.html">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!--header section end -->
+
+
+	<div th:replace="${content}"></div>
+
+
+	<!-- Javascript files-->
+	<script src="js/jquery.min.js"></script>
+	<!--<script src="/js/jquery.min.js"></script>-->
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/plugin.js"></script>
+	<!-- sidebar -->
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="/js/custom.js"></script>
+	<!-- javascript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+		integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!--<script src="/js/owl.carousel.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script src="/js/swiper.js"></script>
+	<script src="/js/swiper-bundle.min.js"></script>
+	<!--contact us-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"
+		integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!--<script src="/js/jquery.validate.min.js"></script>-->
+	<script src="/js/main.js"></script>
+	<script src="/js/modal.js"></script>
+
+	<script>
+  function scrollToLoanSwiper() {
+    var loanSwiperSection = document.getElementById('loanSwiper');
+    if (loanSwiperSection) {
+      loanSwiperSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error("LoanSwiper section not found!");
+    }
+  }
+</script>
+
+
+
+
+</body>
+
+</html>

@@ -33,5 +33,4 @@
 			  loop: true,
 		  },
 	  },
-	  loopFillGroupWithBlank: true,
     });
