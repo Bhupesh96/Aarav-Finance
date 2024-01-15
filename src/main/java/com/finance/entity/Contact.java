@@ -14,13 +14,14 @@ public class Contact {
 	private String name;
 	private String email;
 	private String subject;
+	private String message;
+	
 	public String getSubject() {
 		return subject;
 	}
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
-	private String message;
 	public int getId() {
 		return id;
 	}
@@ -44,6 +45,11 @@ public class Contact {
 	}
 	public void setMessage(String message) {
 		this.message = message;
+	}
+	@Override
+	public String toString() {
+		return "Contact [id=" + id + ", name=" + name + ", email=" + email + ", subject=" + subject + ", message="
+				+ message + "]";
 	}
 	
 	

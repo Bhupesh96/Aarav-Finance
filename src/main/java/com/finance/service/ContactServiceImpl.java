@@ -12,6 +12,7 @@ public class ContactServiceImpl implements ContactService {
 	@Autowired
 	private ContactRepo repo;
 
+	@Override
 	public Contact saveContact(Contact contact) {
 		Contact newContact = repo.save(contact);
 		return newContact;

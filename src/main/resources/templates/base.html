@@ -42,36 +42,10 @@
 
 	<!--contact us-->
 	<link rel="stylesheet" href="/css/contact.css" />
-	<link rel="stylesheet" href="/css/modal.css" />
 
 </head>
 
 <body>
-
-	<!--<section class="modal hidden">
-		<div class="flex">
-			<button class="btn-close">⨉</button>
-		</div>
-		<div>
-			<h3>Apply for a loan</h3>
-		</div>
-		<form id="loanForm" th:action="@{/saveApp}" th:object="${apply}" th:method="post">
-			 Your form elements here 
-			<input type="text" placeholder="Full Name" name="name">
-			<input type="email" placeholder="Email Address" name="email">
-			<input type="tel" placeholder="Mobile Number" name="mobile">
-			<input type="text" placeholder="Loan Type" name="loanType">
-			<input type="text" placeholder="Loan Amount" name="loanAmount">
-			<button type="submit" class="btn">Submit</button>
-		</form>
-	</section>
-
-	<div class="overlay hidden"></div>-->
-
-	<!--<button class="btn btn-open">Open Modal</button>-->
-
-
-
 
 	<!--header section start -->
 	<div class="header_section">
@@ -86,16 +60,16 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
+							<a class="nav-link" th:href="@{/}">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" th:href="@{/about}">About</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="services.html">Services</a>
+							<a class="nav-link" th:href="@{/service}">Services</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact Us</a>
+							<a class="nav-link" th:href="@{/}">Contact Us</a>
 						</li>
 					</ul>
 				</div>
@@ -107,7 +81,7 @@
 
 	<div th:replace="${content}"></div>
 
-	<!-- Modal -->
+	<!-- Modal For Loan-->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -156,6 +130,8 @@
 	</div>
 
 
+
+
 	<!-- Javascript files-->
 	<script src="js/jquery.min.js"></script>
 	<!--<script src="/js/jquery.min.js"></script>-->
@@ -180,8 +156,6 @@
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!--<script src="/js/jquery.validate.min.js"></script>-->
 	<script src="/js/main.js"></script>
-	<script src="/js/modal.js"></script>
-
 	<script th:inline="javascript">
 		function setLoanType(loanType) {
 			document.getElementById('loanType').value = loanType;
